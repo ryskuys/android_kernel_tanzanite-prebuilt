@@ -1,0 +1,19 @@
+// File: kernel/xiaomi/tanzanite-prebuilt/Android.bp
+
+// Ini mendefinisikan dtb.img agar dapat digunakan oleh BoardConfig.mk Anda
+prebuilt_etc {
+    name: "dtb.img",
+    src: "dtb.img",
+    // Ini menginstruksikan sistem build untuk menggunakan file ini
+    // saat membuat vendor_boot image.
+    install_vendor_boot: true,
+}
+
+// Ini mendefinisikan dtbo.img
+prebuilt_etc {
+    name: "dtbo.img",
+    src: "dtbo.img",
+    // Ini memastikan dtbo.img diinstal ke partisi dtbo
+    soc_specific: true,
+    install_dtbo_or_vendor_boot: true,
+}
